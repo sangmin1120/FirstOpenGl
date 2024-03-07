@@ -1,17 +1,14 @@
-###OpenGL
-: Something like a blueprint for using GPU
+### OpenGL
+: GPU를 사용하는 블루프린트와 같은 것
 
-###GLFW
-: Used to open a window, create a context, handle surfaces, or receive input.
+### GLFW
+: 창을 열거나 컨텍스트를 생성하거나 표면을 처리하거나 입력을 받는 데 사용됨
 
-###GLAD
-: Helps in locating scattered functions and retrieving function pointers
+### GLAD
+: 흩어진 함수를 찾고 함수 포인터를 검색하는 데 도움이 됨
 
-##2024.03.07
-=> A function was implemented to open a window and change the screen color using the F1~F6 keys.
-
-<ol>
-  <li>An object called window was created using GLFWwindow.</li>
-  <li>Viewport settings (?): Refers to the window to be rendered.</li>
-  <li>Input: The processInput function was implemented. Press Esc to exit, check key input from F1 to F6</li>
-</ol>
+## 2024.03.07
+=> F1~F6 키를 사용하여 창을 열고 화면 색상을 변경하는 함수가 구현되었습니다.
+1. GLFWwindow를 사용하여 창 객체가 생성되었습니다.
+2. 뷰포트 설정 (?): 렌더링할 창을 가리킵니다.
+3. 입력: processInput 함수가 구현되었습니다. Esc를 눌러 종료하고 F1에서 F6까지의 키 입력을 확인합니다.
