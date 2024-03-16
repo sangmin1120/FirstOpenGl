@@ -14,8 +14,8 @@
   3. GLFW* window = glfwCreateWindow(height,width,'창 이름',null,null)
 
   // GLAD 초기화<br>
-  // OpenGl에게 렌더링 윈도우 사이즈 알려줘야됨.<br>
-  glviewport(0,0,height,width) => 첫 번째, 두 번째 인자는 윈도우의 왼쪽 아래 모서리 설정
+  // OpenGl에게 렌더링 윈도우 사이즈 알려줘야됨.
+  1. glviewport(0,0,height,width) => 첫 번째, 두 번째 인자는 윈도우의 왼쪽 아래 모서리 설정
 
   // while 루프에서 렌더링
   1. processInput(window) // glfwGetkey(window,   ) 로 확인하는 함수 만듬
