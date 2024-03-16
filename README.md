@@ -9,7 +9,6 @@
 
 ### 1. Hello window
 : window 창을 생성.(main 함수의 동작하는 순서와 함수 설명)
-<ol>
   1. glfwInit : GLFW를 초기화
   2. glfwWindowHint : GLFW를 설정 => GLFW 접두어로 옵션 선택
   3. GLFW* window = glfwCreateWindow(height,width,'창 이름',null,null)
@@ -28,7 +27,6 @@
   // 이벤트를 확인하고 버퍼를 교체
   glfwSwapBuffers(window) => 컬러 버퍼(GLFW 창 안의 각 픽셀들에 대한 컬러값을 가지고 있는 버퍼)를 교체
   glfwPollEvents() => 키보드 입력, 마우스 이동 이벤트 발생했는 지 확인
-</ol>
 
 ## 2024.03.07
 => F1~F6 키를 사용하여 창을 열고 화면 색상을 변경하는 함수가 구현되었습니다.
