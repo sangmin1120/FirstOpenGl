@@ -13,8 +13,8 @@
   2. glfwWindowHint : GLFW를 설정 => GLFW 접두어로 옵션 선택
   3. GLFW* window = glfwCreateWindow(height,width,'창 이름',null,null)
 
-  // GLAD 초기화
-  // OpenGl에게 렌더링 윈도우 사이즈 알려줘야됨.
+  // GLAD 초기화<br>
+  // OpenGl에게 렌더링 윈도우 사이즈 알려줘야됨.<br>
   glviewport(0,0,height,width) => 첫 번째, 두 번째 인자는 윈도우의 왼쪽 아래 모서리 설정
 
   // while 루프에서 렌더링
