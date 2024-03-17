@@ -49,5 +49,24 @@
   **uniform**
   : 모든 단계의 모든 shader에서 접근 가능하다. 어떤 값을 설정하든 리셋을 하거나 업데이트를 하기 전까지 그 값을 계속 유지한다.
   **VBO,VAO**
-  : ??
+  : VBO 하나의 정점 속성을 갖고 있는 GPU 상의 메모리 버퍼(위치 정보, 색상 등), 고유 ID를 가진다.
+    1. VBO ID 준비
+    2. 버퍼 객체 생성 및 ID에 바인딩
+    3. 버퍼 객체 타입 바인딩
+    4. 버퍼에 실질적 데이터 담기
+  : VAO 하나 이상의 VBO를 담을 수 있는 객체, 고유 ID를 가진다.
+    1. VAO ID 준비
+    2. VAO 객체 생성 및 ID에 바인딩
+    3. 객체 타입 바인딩
+  **vertex Attribute**
+  : vertex buffer에 들어가는 입력 데이터
+  => glVertexAttribPointer(index,size,type,normalized,stride,pointer)
+      index : Location 의 순서
+      size : 정점 속성의 구성 크기(vec의 크기)
+      type : 배열 내 데이터들의 타입
+      normalized : 정규화되어야하는 지 여부 전달
+      stride : 배열 내 각각 데이터의 byte offset
+      pointer : 해당 정점 속성의 시작 byte 위치
+  => glEnableVertexAttribArray(index) : 해당 인덱스에 위치한 정점 속성 배열을 활성화
+      index : 활성화시킬 정점 속성 배열이 위치한 인덱스
   
