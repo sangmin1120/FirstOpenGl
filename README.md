@@ -38,8 +38,10 @@
 : 삼각형을 만들어 색을 넣었다.
 => shader는 GPU 에서 병렬처리하는 프로그램이다.
   shader 마다 입력과 출력이 필요하다. 따라서 GLSL 은 in 과 out 키워드로 출력 변수를 다음 shader에 넘겨준다.
+  
   **1. vertex shader**
   : vertex 데이터를 곧바로 입력 받는다.
+  
   **2. fragment shader**
   : 최종 출력 컬러를 생서하기 때문에 vec4 타입의 출력 변수가 필요하다.
 
@@ -48,6 +50,7 @@
 
   **uniform**
   : 모든 단계의 모든 shader에서 접근 가능하다. 어떤 값을 설정하든 리셋을 하거나 업데이트를 하기 전까지 그 값을 계속 유지한다.
+  
   **VBO,VAO**
   : VBO 하나의 정점 속성을 갖고 있는 GPU 상의 메모리 버퍼(위치 정보, 색상 등), 고유 ID를 가진다.
     1. VBO ID 준비
@@ -58,6 +61,7 @@
     1. VAO ID 준비
     2. VAO 객체 생성 및 ID에 바인딩
     3. 객체 타입 바인딩
+    
   **vertex Attribute**
   : vertex buffer에 들어가는 입력 데이터
   => glVertexAttribPointer(index,size,type,normalized,stride,pointer)
