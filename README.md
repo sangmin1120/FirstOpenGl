@@ -73,4 +73,6 @@
       pointer : 해당 정점 속성의 시작 byte 위치
   => glEnableVertexAttribArray(index) : 해당 인덱스에 위치한 정점 속성 배열을 활성화
       index : 활성화시킬 정점 속성 배열이 위치한 인덱스
-  
+
+  ### 3. Texture
+  : 그림 2개를 가져와 겹쳐 놓는다. wrap과 mapping에 대해 알아 보았다.
