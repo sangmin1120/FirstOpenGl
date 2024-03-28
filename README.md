@@ -30,15 +30,17 @@
   glfwSwapBuffers(window) => 컬러 버퍼(GLFW 창 안의 각 픽셀들에 대한 컬러값을 가지고 있는 버퍼)를 교체
   glfwPollEvents() => 키보드 입력, 마우스 이동 이벤트 발생했는 지 확인
 
-#### 2024.03.07 
-=> F1~F6 키를 사용하여 창을 열고 화면 색상을 변경하는 함수가 구현
+ * VBO는 버퍼에 저장한 vertex들을
+   GPU에 올려주고 랜더링 할 때마다 다시 전송할 필요없다.
+   버퍼 만들기 => 버퍼에 데이터 전송(바인딩) : glBindBuffer 함수로 VBO를 GL_ARRAY_BUFFER에 관해서
+   바인딩해주면, 그 이후로 GL_ARRAY_BUFFER에 정보를 넣을 때 우리가 만들 VBO에 정보를 저장. 바인딩이 끝났으면, vertx를 VBO에 담는다.
 
 
 ### 2. Hello Triangle
 : 삼각형을 만들어 색을 넣었다.
 => shader는 GPU 에서 병렬처리하는 프로그램이다.
   shader 마다 입력과 출력이 필요하다. 따라서 GLSL 은 in 과 out 키워드로 출력 변수를 다음 shader에 넘겨준다.
-  
+   
   **1. vertex shader**
   : vertex 데이터를 곧바로 입력 받는다.
   
