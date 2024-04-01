@@ -24,7 +24,7 @@ const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
 // camera
-Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+Camera camera(glm::vec3(0.0f, 0.0f, 10.0f));
 float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
 bool firstMouse = true;
@@ -250,24 +250,28 @@ int main()
         ourShader.setMat4("view", view);
 
         // render boxes
+        float before = 0.0f;
         glBindVertexArray(VAO);
         for (unsigned int i = 0; i < 10; i++)
         {
             // calculate the model matrix for each object and pass it to shader before drawing
             glm::mat4 model = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
             model = glm::translate(model, cubePositions[i]);
-            if (space_toggle == true) {
-                if (i == 0)   model = glm::translate(model, glm::vec3(deltaTime, 0, 0));
-                float angle = glfwGetTime() * 25.0f * (i + 1);
-                if (i % 3 == 0)
-                    model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
-                else if (i % 3 == 1)
-                    model = glm::rotate(model, glm::radians(angle), glm::vec3(0.0f, 1.0f, 0.0f));
-                else
-                    model = glm::rotate(model, glm::radians(angle), glm::vec3(0.5f, 0.5f, 0.5f));
+            float angle = glfwGetTime() * 25.0f * (i + 1);
 
-            }
-         
+            if (space_toggle == true)
+                before = angle;
+            else
+                angle = before;
+            if (i == 0)   model = glm::translate(model, glm::vec3(deltaTime, 0, 0));
+
+            if (i % 3 == 0)
+                model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+            else if (i % 3 == 1)
+                model = glm::rotate(model, glm::radians(angle), glm::vec3(0.0f, 1.0f, 0.0f));
+            else
+                model = glm::rotate(model, glm::radians(angle), glm::vec3(0.5f, 0.5f, 0.5f));
+
             ourShader.setMat4("model", model);
             glDrawArrays(GL_TRIANGLES, 0, 36);
         }
@@ -304,8 +308,11 @@ void processInput(GLFWwindow* window)
         camera.ProcessKeyboard(LEFT, deltaTime);
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
         camera.ProcessKeyboard(RIGHT, deltaTime);
+
     if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
-        space_toggle = !space_toggle;
+        space_toggle = true;
+    else
+        space_toggle = false;
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
