@@ -34,6 +34,7 @@
    GPU에 올려주고 랜더링 할 때마다 다시 전송할 필요없다.
    버퍼 만들기 => 버퍼에 데이터 전송(바인딩) : glBindBuffer 함수로 VBO를 GL_ARRAY_BUFFER에 관해서
    바인딩해주면, 그 이후로 GL_ARRAY_BUFFER에 정보를 넣을 때 우리가 만들 VBO에 정보를 저장. 바인딩이 끝났으면, vertx를 VBO에 담는다.
+   순서 : 객체 생성 --> 바인딩 --> GL_ARRAY_BUFFER에 배열 넘겨주기 --> 배열이 어떻게 해석해야 하는 지 알려주기 --> location 에 넘겨주기
 
 
 ### 2. Hello Triangle
