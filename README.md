@@ -1,4 +1,6 @@
-### OpenGL
+# GPU 프로그래밍
+
+## OpenGL
 : GPU를 사용하는 블루프린트와 같은 것
 
 ### GLFW
@@ -8,7 +10,9 @@
 : 흩어진 함수를 찾고 함수 포인터를 검색하는 데 도움이 됨
 
 ### 1. Hello window
+
 : window 창을 생성.(main 함수의 동작하는 순서와 함수 설명)
+
   1. glfwInit : GLFW를 초기화
   2. glfwWindowHint : GLFW를 설정 => GLFW 접두어로 옵션 선택
   3. GLFW* window = glfwCreateWindow(height,width,'창 이름',null,null)
@@ -31,15 +35,21 @@
   glfwPollEvents() => 키보드 입력, 마우스 이동 이벤트 발생했는 지 확인
 
  * VBO는 버퍼에 저장한 vertex들을
+
    GPU에 올려주고 랜더링 할 때마다 다시 전송할 필요없다.
+   
    버퍼 만들기 => 버퍼에 데이터 전송(바인딩) : glBindBuffer 함수로 VBO를 GL_ARRAY_BUFFER에 관해서
+   
    바인딩해주면, 그 이후로 GL_ARRAY_BUFFER에 정보를 넣을 때 우리가 만들 VBO에 정보를 저장. 바인딩이 끝났으면, vertx를 VBO에 담는다.
+   
    순서 : 객체 생성 --> 바인딩 --> GL_ARRAY_BUFFER에 배열 넘겨주기 --> 배열이 어떻게 해석해야 하는 지 알려주기 --> location 에 넘겨주기
 
 
 ### 2. Hello Triangle
 : 삼각형을 만들어 색을 넣었다.
+
 => shader는 GPU 에서 병렬처리하는 프로그램이다.
+
   shader 마다 입력과 출력이 필요하다. 따라서 GLSL 은 in 과 out 키워드로 출력 변수를 다음 shader에 넘겨준다.
    
   **1. vertex shader**
@@ -49,6 +59,7 @@
   : 최종 출력 컬러를 생서하기 때문에 vec4 타입의 출력 변수가 필요하다.
 
   따라서 한 shader에서 다른 shader로 넘기고 싶다면 shader에서 출력을 선언해야하고 받는 shader에서 입력을 선언하면 된다.
+  
   <u>(나중에 shader의 헤더파일을 include하여 선언할 예정이다. 아직은 코드마다 작성하였다.)</U>
 
   **uniform**
@@ -68,16 +79,27 @@
   **vertex Attribute**
   : vertex buffer에 들어가는 입력 데이터
   => glVertexAttribPointer(index,size,type,normalized,stride,pointer)
+  
       index : Location 의 순서
+      
       size : 정점 속성의 구성 크기(vec의 크기)
+      
       type : 배열 내 데이터들의 타입
+      
       normalized : 정규화되어야하는 지 여부 전달
+      
       stride : 배열 내 각각 데이터의 byte offset
+      
       pointer : 해당 정점 속성의 시작 byte 위치
+      
   => glEnableVertexAttribArray(index) : 해당 인덱스에 위치한 정점 속성 배열을 활성화
       index : 활성화시킬 정점 속성 배열이 위치한 인덱스
 
   ### 3. Texture
   : 그림 2개를 가져와 겹쳐 놓는다. wrap과 minmap,filtering에 대해 알아 보았다.
+  
   wraping : 텍스쳐의 설정 범위가 크기를 넘으면 어떻게 설정할 것인가. 
+  
   filtering : 좌표의 색을 보간으로 할지, 그 색상에 값으로 할지 설정.
+
+  ### 4. 
