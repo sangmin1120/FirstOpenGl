@@ -6,4 +6,4 @@ uniform float ourBrightness;
 void main()
 {
    FragColor = ourBrightness*vec4(ourColor, 1.0f);
-}
+} 
