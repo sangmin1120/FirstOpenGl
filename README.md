@@ -102,4 +102,12 @@
   
   filtering : 좌표의 색을 보간으로 할지, 그 색상에 값으로 할지 설정.
 
+  Mipmaps : 텍셀의크기 < 픽셀의 크기 일 때 Minmap의 유사한 크기와 매칭
+
+  => 1. 텍스처 생성 후 바인딩 , 필요시 텍스처 wrapping/filtering 설정
+     2. 2D 텍스처 생성 및 Minmaps 생성
+     ( shader에서는 'sampler2D' 변수로 입력받는다 )
+     
+     벡터의 다양한 연산 방법.
+
   ### 4. 
