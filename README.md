@@ -113,4 +113,25 @@
      
      -벡터의 다양한 연산 방법.
 
-  ### 4. 
+  ### 4. Coordinate System
+
+  local space => (model) => world space => (view) => view space => (projection) => slip sapce => viewport => screen space
+
+  *local : 객체의 원점을 (0,0,0) 기준으로 놓는 공간이다. shader에 vertex를 넘겨줄 때 좌표를 생각하면 된다.
+
+  * world : local space 상의 객체를 실제 model matrix를 이용해 이동 , 스케일 , 회전 을 한다.
+
+  * view : Camera 의 과전에서 바라보는 공간
+
+  * clip : NDC 좌표로 변환하여 보여준다. NDC의 범위를 벗어나면 clipping한다.
+
+  * 직교 투영 / 원근 투영
+    : 원근감을 고려하지 않음 / 원근감을 고려해서 가까이있을 수록 크게 보인다.
+    
+    - 증명 방법
+
+  * 카메라 정의 : 위치 , 방향 벡터 , right vector , up vector  를 정의 해야됨 Look At 행렬에서 한 번에 정의할 수 있다.
+
+  * deltaTime , lastframe 을 이용해 frame rate와 관계없이 균일한 속도로 이동하도록 구현.
+
+  * 카메라의 Euler Angles
