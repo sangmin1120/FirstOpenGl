@@ -134,4 +134,4 @@
 
   * deltaTime , lastframe 을 이용해 frame rate와 관계없이 균일한 속도로 이동하도록 구현.
 
-  * 카메라의 Euler Angles
+  * 카메라의 Euler Angles 
